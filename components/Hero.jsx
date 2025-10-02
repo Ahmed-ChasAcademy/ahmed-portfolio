@@ -39,7 +39,7 @@ export default function Hero() {
           onClick={scrollToProjects}
           className="cta-button text-black font-bold py-3 px-8 rounded-full inline-block"
         >
-          View My Universe
+          View Projects
         </button>
       </div>
     </section>

@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-      <div className="text-2xl font-bold neon-blue glow-blue">Ahmed</div>
+      <div className="text-2xl font-bold neon-blue glow-blue">AB</div>
       
       {/* Desktop Menu */}
       <div className="hidden md:flex space-x-8">
@@ -22,7 +22,7 @@ export default function Navbar() {
           <button
             key={item}
             onClick={() => scrollToSection(item)}
-            className="text-gray-300 hover:text-white transition capitalize"
+            className="text-gray-300 hover:text-red underline transition capitalize"
           >
             {item}
           </button>
@@ -41,7 +41,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-gray-900 md:hidden">
+        <div className="absolute top-16 left-0 right-0  md:hidden">
           <div className="flex flex-col space-y-4 p-6">
             {['about', 'skills', 'projects', 'contact'].map((item) => (
               <button
