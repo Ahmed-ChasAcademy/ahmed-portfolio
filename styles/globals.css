@@ -1,26 +1,78 @@
-@import "tailwindcss";
+/* styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #0a0a0a;
+    color: #f0f0f0;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .neon-blue {
+    color: #00f0ff;
+  }
+  
+  .neon-green {
+    color: #00ff9d;
+  }
+  
+  .glow-blue {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+  }
+  
+  .glow-green {
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.7);
+  }
+  
+  .glass-card {
+    background: rgba(15, 15, 15, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.1);
+  }
+  
+  .typewriter {
+    overflow: hidden;
+    border-right: 3px solid #00f0ff;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  .tech-icon {
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+  }
+  
+  .tech-icon:hover {
+    filter: grayscale(0%);
+    transform: translateY(-5px);
+  }
+  
+  .cta-button {
+    background: linear-gradient(45deg, #00f0ff, #00ff9d);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.8);
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #00f0ff }
 }
